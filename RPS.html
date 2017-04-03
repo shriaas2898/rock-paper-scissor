@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<script type="text/javascript">
+	function getRandomNo(min,max)
+	{
+		return Math.floor(Math.random()*(max-min+1))+min;
+	}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+	var points,rps=["rock","paper","sicssor","rock"]
+	var upoint=0,cpoint=0,ran,choice;
+	do{points=prompt("enter no. of points you want to play")
+	}while(isNaN(points)||points<=0)
+	do{
+		
+		
+		
+		
+          while(1)
+		 {
+		 	choice=prompt("enter your choice :rock,paper or sicssor");
+		     if(choice==null)
+		     	continue
+		    else
+		    {
+			  choice=choice.toLowerCase()
+  		      if(choice=="rock"||choice=="sicssor"||choice=="paper")
+			    break;
+		    }
+		 }
+	    
+		
+        ran=rps[getRandomNo(0,2)]
+
+		if(ran==choice)
+			alert("tie")
+		else
+			{
+			
+			if(rps.indexOf(ran)==rps.indexOf(choice)+1)
+				cpoint++
+			else
+				upoint++
+		
+	     }
+	     alert("cpu choice: " +ran+" ,your choice: "+choice+"\n\n Your score: "+ upoint+"/"+points+"CPU score="+cpoint+"/"+points)
+       }while(cpoint<points&&upoint<points);
+       if(cpoint<upoint)
+       	alert("congratulations you win")
+       else
+       	alert("You loose better luck next time")
+
+</script>
+</body>
+</html>
